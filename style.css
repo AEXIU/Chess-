@@ -1,0 +1,45 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Chessboard styling */
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    gap: 0;
+    border: 2px solid #333;
+}
+
+/* Styling each cell */
+.cell {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* Dark and light squares */
+.dark {
+    background-color: #769656;
+}
+
+.light {
+    background-color: #eeeed2;
+}
+
+/* Highlight selected cell */
+.selected {
+    background-color: #baca44 !important;
+}
