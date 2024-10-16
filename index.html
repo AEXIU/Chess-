@@ -7,12 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Simple Chess Game</h1>
-    
-    <!-- Chessboard container -->
-    <div id="chessboard"></div>
+    <div id="game-container">
+        <h1>AXIU CHESS </h1>
+        
+        <!-- Game Status Display -->
+        <div id="status" class="status">White to move</div>
+        
+        <!-- Mode Selector -->
+        <div id="mode-selector">
+            <label for="play-mode">Choose Mode:</label>
+            <select id="play-mode">
+                <option value="human">Player vs Player</option>
+                <option value="ai">Player vs AI</option>
+            </select>
+        </div>
+        
+        <!-- Theme Selector -->
+        <div id="theme-selector">
+            <label for="theme">Select Theme:</label>
+            <select id="theme">
+                <option value="classic">Classic</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="black-and-white">Black & White</option>
+            </select>
+        </div>
+        
+        <!-- Chessboard Container -->
+        <div id="chessboard" class="chessboard"></div>
+        
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button id="reset">Reset Game</button>
+            <button id="undo">Undo</button>
+            <button id="redo">Redo</button>
+        </div>
+    </div>
 
-    <!-- Script -->
+    <!-- Include Chess.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    
+    <!-- Include JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
