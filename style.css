@@ -1,45 +1,144 @@
-/* General body styling */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    text-align: center;
+    background-color: #f4f4f4;
     margin: 0;
-    background-color: #f0f0f0;
+    padding: 0;
 }
 
-/* Chessboard styling */
-#chessboard {
+#game-container {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Chessboard Styling */
+.chessboard {
     display: grid;
-    grid-template-columns: repeat(8, 80px);
-    grid-template-rows: repeat(8, 80px);
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
     gap: 0;
     border: 2px solid #333;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-/* Styling each cell */
+/* Cell Styling */
 .cell {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 30px;
     cursor: pointer;
-}
-
-/* Dark and light squares */
-.dark {
-    background-color: #769656;
+    user-select: none;
+    transition: background-color 0.3s ease;
 }
 
 .light {
-    background-color: #eeeed2;
+    background-color: #f0d9b5;
 }
 
-/* Highlight selected cell */
-.selected {
-    background-color: #baca44 !important;
+.dark {
+    background-color: #b58863;
+}
+
+/* Highlighting Moves */
+.highlight {
+    background-color: rgba(0, 255, 0, 0.5) !important;
+}
+
+/* Hover Highlight for Selected Piece */
+.piece-hover {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* Status Display */
+.status {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Control Buttons */
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Celebratory Window */
+.celebration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 10px;
+    font-size: 28px;
+    text-align: center;
+    z-index: 1000;
+    animation: pop-up 0.5s ease-in-out;
+}
+
+@keyframes pop-up {
+    from { transform: translate(-50%, -50%) scale(0.8); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+.celebration button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5722;
+}
+
+.celebration button:hover {
+    background-color: #e64a19;
+}
+
+/* Theme Styling */
+.theme-green .light {
+    background-color: #a9d18e;
+}
+
+.theme-green .dark {
+    background-color: #588c58;
+}
+
+.theme-blue .light {
+    background-color: #c3e3f7;
+}
+
+.theme-blue .dark {
+    background-color: #4a90e2;
+}
+
+.theme-black-and-white .light {
+    background-color: #ffffff;
+}
+
+.theme-black-and-white .dark {
+    background-color: #000000;
+    color: white;
 }
