@@ -325,3 +325,5 @@ themeElement.addEventListener('change', function () {
 window.onload = function () {
     createChessboard();
 };
+// later adding castling and reversing it using undo + adding if else statements for wannabe AI
+
